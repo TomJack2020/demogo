@@ -1,7 +1,7 @@
 package main
 
 import (
-	t "demogo/tools"
+	"demogo/tools"
 	"fmt"
 )
 
@@ -10,6 +10,10 @@ import (
 func main() {
 
 	fmt.Println("hello world")
+
+	res := tools.ConfigDbConnUrl("")
+	fmt.Println(res)
+
 	//db := tools.ConnectProductSystem()
 	//var product []tools.YibaiProdSku
 	//db.Limit(10).Where("sku = ?", "H38676B").Find(&product)
@@ -20,7 +24,7 @@ func main() {
 	//db.Limit(10).Model(&tools.YibaiProdSku{}).Select("sku,spu,title_cn").Find(&productMap)
 	//fmt.Println(productMap)
 
-	rss := t.SelectSelectResultWithAccountByPublishId(7638)
-	fmt.Println(rss)
+	//rss := t.SelectSelectResultWithAccountByPublishId(7638)
+	//fmt.Println(rss)
 
 }

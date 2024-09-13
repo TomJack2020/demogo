@@ -61,11 +61,11 @@ func main() {
 
 	// 测试并发计算
 	var s []int64
-	for j := 0; j < 1000; j++ {
+	for j := 0; j < 2000; j++ {
 		s = append(s, int64(j)*10000)
 	}
 
-	fmt.Println(s)
+	//fmt.Println(s)
 
 	var res []int64 // 定义结果数据集
 

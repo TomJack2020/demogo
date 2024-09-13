@@ -18,15 +18,19 @@ type DbUserInfo struct {
 func main() {
 
 	res := tools.ConfigDbConnUrl("")
+	fmt.Println(res)
 	// 连接数据库
-	db := tools.GetDbConByGorm(res["localCkDbUrl"], "clickhouse", "imdb.")
+	db := tools.GetDbConByGorm(res["localMyDb"], "mysql", "book.")
 	fmt.Println(db)
 
 	db.AutoMigrate(&DbUserInfo{})
 
+	db.Exec("Truncate table db_user_info")
+
 	users := []DbUserInfo{
 		{Id: 1, Dbname: "test1", Dbhost: "127.0.0.1", Username: "lisi", Password: "123456", Dbuse: "ck"},
 		{Id: 2, Dbname: "test2", Dbhost: "127.0.0.1", Username: "wangwu", Password: "123456", Dbuse: "ck"},
+		{Id: 3, Dbname: "test2", Dbhost: "127.0.0.1", Username: "wangwu", Password: "123456", Dbuse: "ck"},
 	}
 	// 插入
 	db.Create(&users)

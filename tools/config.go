@@ -14,7 +14,7 @@ type Config struct {
 	}
 }
 
-var initPath = "D:\\demogo\\resources\\config.yaml"
+var initPath = "/Volumes/SolfD/GolangDemo/demogo/resources/config.yaml"
 
 func ConfigDbConnUrl(path string) map[string]string {
 	if path == "" {
