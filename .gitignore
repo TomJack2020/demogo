@@ -17,6 +17,7 @@
 /results/
 /resources/*
 resources/
+.history/
 
 # Editor temporary files
 *.swp
