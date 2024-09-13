@@ -15,7 +15,7 @@ func sum(s []int, c chan int) {
 	c <- sum // 把 sum 发送到通道 c
 }
 
-// 斐波那契函数测试阻塞通道
+// 斐波那契函数测试阻塞通道  sample 1
 func fibonacci(n int, c chan int) {
 	x, y := 0, 1
 	for i := 0; i < n; i++ {
