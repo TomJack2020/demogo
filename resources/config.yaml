@@ -1,0 +1,8 @@
+db:
+  localMyDb: root:test123@(localhost:3306)/test_java # 本地mysql
+  localCkDbUrl:  clickhouse://default:test123@localhost:9000/imdb?dial_timeout=100s&read_timeout=200s # 本地ck
+  amazonCenter: W00575:YIJ8CxjJbC@(124.71.34.226:13678)/yibai_sale_center_amazon # 亚马逊中心数据库
+  productSystem: W00575:YIJ8CxjJbC@(110.41.50.124:14302)/yibai_prod_base # 产品系统数据库
+
+  
+    
