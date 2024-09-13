@@ -16,6 +16,7 @@
 /out/
 /results/
 /resources/*
+resources/
 
 # Editor temporary files
 *.swp
