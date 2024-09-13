@@ -15,7 +15,7 @@
 /pkg/
 /out/
 /results/
-/tmp/
+/resources/
 
 # Editor temporary files
 *.swp
