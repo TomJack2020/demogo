@@ -1,12 +1,12 @@
-package main
+package draft
 
 import (
-	"demogo/tools"
+	"demogo/src/tools"
 	"fmt"
 	"log"
 )
 
-func main() {
+func conCk() {
 	fmt.Println("Hello, world!")
 
 	// 连接数据库clickhouse

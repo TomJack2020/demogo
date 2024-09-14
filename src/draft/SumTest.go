@@ -1,4 +1,4 @@
-package main
+package draft
 
 import (
 	"fmt"
@@ -37,7 +37,7 @@ func sumNum(n int64) int64 {
 	return s
 }
 
-func main() {
+func SumTest() {
 	//s := []int{7, 2, 8, -9, 4, 0, 1, 3, 4, 5, 5}
 	//c := make(chan int, 2) // 定义一个容量为 2 的通道
 	//

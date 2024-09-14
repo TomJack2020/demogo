@@ -2,13 +2,15 @@ package tools
 
 import (
 	"fmt"
+	"io/ioutil"
+	"os"
+
 	"github.com/jmoiron/sqlx"
 	"gorm.io/driver/clickhouse"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
-	"io/ioutil"
-	"os"
 )
 
 /*
@@ -72,6 +74,7 @@ func GetDbConByGorm(dsn string, dbType string, PrefixName string) *gorm.DB {
 				TablePrefix:   PrefixName, // 表名前缀，`Article` 的表名应该是 `it_articles`
 				SingularTable: true,       // 使用单数表名，启用该选项，此时，`Article` 的表名应该是 `it_article`,
 			},
+			Logger: logger.Default.LogMode(logger.Error),
 		})
 		if err != nil {
 			fmt.Println(err.Error())
@@ -86,6 +89,7 @@ func GetDbConByGorm(dsn string, dbType string, PrefixName string) *gorm.DB {
 				TablePrefix:   PrefixName, // 表名前缀，`Article` 的表名应该是 `it_articles`
 				SingularTable: true,       // 使用单数表名，启用该选项，此时，`Article` 的表名应该是 `it_article`,
 			},
+			Logger: logger.Default.LogMode(logger.Warn),
 		})
 		if err != nil {
 			fmt.Println("failed to connect database", err.Error())

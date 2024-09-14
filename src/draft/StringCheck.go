@@ -1,4 +1,4 @@
-package main
+package draft
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func main() {
+func StringCheck() {
 
 	// Declare a string variable
 

@@ -1,4 +1,4 @@
-package main
+package draft
 
 import (
 	"demogo/tools"
@@ -15,7 +15,7 @@ type DbUserInfo struct {
 }
 
 // localMyDb  localCkDbUrl   amazonCenter
-func main() {
+func testgorm() {
 
 	res := tools.ConfigDbConnUrl("")
 	// 连接数据库

@@ -1,8 +1,9 @@
 package tools
 
 import (
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
+
+	"gopkg.in/yaml.v2"
 )
 
 type Config struct {
@@ -11,10 +12,11 @@ type Config struct {
 		LocalCkDbUrl  string `yaml:"localCkDbUrl"`
 		AmazonCenter  string `yaml:"amazonCenter"`
 		ProductSystem string `yaml:"productSystem"`
+		WalmartCenter string `yaml:"walmartCenter"`
 	}
 }
 
-var initPath = "D:\\demogo\\resources\\config.yaml"
+var initPath = "resources/config.yaml"
 
 func ConfigDbConnUrl(path string) map[string]string {
 	if path == "" {
@@ -37,6 +39,7 @@ func ConfigDbConnUrl(path string) map[string]string {
 	dbMap["localCkDbUrl"] = config.Db.LocalCkDbUrl
 	dbMap["amazonCenter"] = config.Db.AmazonCenter
 	dbMap["productSystem"] = config.Db.ProductSystem
+	dbMap["walmartCenter"] = config.Db.WalmartCenter
 	return dbMap
 
 }

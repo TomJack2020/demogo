@@ -31,7 +31,8 @@ type ResultSelectAccount struct {
 //var AmazonCenterDb *gorm.DB
 
 var amazonSelectResult YibaiAmazonPublishSkuSelectResult
-var amazonSelectResults []YibaiAmazonPublishSkuSelectResult
+
+// var amazonSelectResults []YibaiAmazonPublishSkuSelectResult
 
 func ConnectAmazonCenter() *gorm.DB {
 	// TODO: connect to Amazon Center API
