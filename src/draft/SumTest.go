@@ -15,7 +15,7 @@ func sum(s []int, c chan int) {
 	c <- sum // 把 sum 发送到通道 c
 }
 
-// 斐波那契函数测试阻塞通道
+// 斐波那契函数测试阻塞通道  sample 1
 func fibonacci(n int, c chan int) {
 	x, y := 0, 1
 	for i := 0; i < n; i++ {
@@ -61,11 +61,11 @@ func SumTest() {
 
 	// 测试并发计算
 	var s []int64
-	for j := 0; j < 1000; j++ {
+	for j := 0; j < 2000; j++ {
 		s = append(s, int64(j)*10000)
 	}
 
-	fmt.Println(s)
+	//fmt.Println(s)
 
 	var res []int64 // 定义结果数据集
 
