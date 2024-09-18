@@ -1,4 +1,4 @@
-package amazon
+package _amazon
 
 import "fmt"
 

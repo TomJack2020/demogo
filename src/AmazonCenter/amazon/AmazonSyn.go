@@ -1,4 +1,4 @@
-package amazon
+package _amazon
 
 import (
 	"demogo/src/tools"
@@ -17,7 +17,7 @@ type YibaiAmazonSkuPublishTitleLog struct {
 // localMyDb  localCkDbUrl   amazonCenter
 
 var (
-	res = tools.ConfigDbConnUrl("") // 连接数据库 本地ck库数据连接
+	configPath = "D:/demogo/src/resources/config.yaml" // 连接数据库 本地ck库数据连接
 )
 
 //危险方法 一般不要用 手动库里处理
@@ -31,7 +31,7 @@ var (
 SynAmazonTitleLog 同步亚马逊标题使用情况到本地ck库
 */
 func SynAmazonTitleLog(startNum int, endNum int) {
-
+	res := tools.ConfigDbConnUrl(configPath)
 	// 51288  186986015
 	dbAmazonCenter := tools.GetDbConByGorm(res["amazonCenter"], "mysql", "yibai_sale_center_amazon.") // 连接数据库 亚马逊中心库数据连接
 
@@ -40,8 +40,7 @@ func SynAmazonTitleLog(startNum int, endNum int) {
 	dbAmazonCenter.Model(&YibaiAmazonSkuPublishTitleLog{}).Select("title_id,sku,use_count,site_code,language_code").Where(
 		"language_code = 'en' and site_code = 'US' and id between ? and ?", startNum, endNum).Find(&rs)
 
-	// 同步数据库数据处理
-	res := tools.ConfigDbConnUrl("")                                              // 连接数据库 本地ck库数据连接
+	// 同步数据库数据处理                                             // 连接数据库 本地ck库数据连接
 	ddLocalCk := tools.GetDbConByGorm(res["localCkDbUrl"], "clickhouse", "imdb.") // 连接本地ck库 存储到imdb
 	ddLocalCk.AutoMigrate(&YibaiAmazonSkuPublishTitleLog{})                       // 连接数据库 亚马逊中心库数据连接 建表语句 如果存在自动跳过 字段少的会新增 数据不会删除
 

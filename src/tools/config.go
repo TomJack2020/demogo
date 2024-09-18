@@ -16,12 +16,9 @@ type Config struct {
 	}
 }
 
-<<<<<<< HEAD:src/tools/config.go
 var initPath = "resources/config.yaml"
-=======
-var initPath = "/Volumes/SolfD/GolangDemo/demogo/resources/config.yaml"
->>>>>>> b8e0d48569c3ea2d9b65f42cfc63c5ab8a0334f9:tools/config.go
 
+// var initPath = "/Volumes/SolfD/GolangDemo/demogo/resources/config.yaml"
 func ConfigDbConnUrl(path string) map[string]string {
 	if path == "" {
 		path = initPath
